@@ -28,3 +28,9 @@ let item_7_type = typeof(item_7);
 console.log("item_7 ==" + item_7_type)
 console.log("item_7_type == " + typeof(item_7_type))
 
+let n = 5; 
+let nn = n + "" + n;   
+let nnn = n + "" + n + "" + n;  
+let sum = Number(n) + Number(nn) + Number(nnn);
+
+console.log(sum)
