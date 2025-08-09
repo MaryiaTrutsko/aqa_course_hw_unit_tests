@@ -51,6 +51,7 @@ const text = 'Hello! I am a JS student!';
 let replaceSpacesWithOneResult = text.replaceAll(' ', '1');
 
 console.log(replaceSpacesWithOneResult)
+
 export { evenNumbersResult, smilePatternResult, replaceSpacesWithOneResult };
 
 
