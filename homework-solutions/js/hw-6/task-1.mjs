@@ -18,7 +18,7 @@ for (const number of numbers) {
   }
 }
 
-console.log(forOf);
+//console.log(forOf);
 
 /*
 2. Методы массивов
@@ -38,7 +38,7 @@ result.unshift(0);
 result.splice(2, 1); 
 result.pop();        
 
-console.log(result);
+//console.log(result);
 
 /*
 3. Деструктуризация массивов
@@ -51,9 +51,9 @@ const numsArr = [3, 11, 32, 7, 20];
 
 const [first, second, ...rest] = numsArr;
 
-console.log(first);  
-console.log(second); 
-console.log(rest);  
+//console.log(first);  
+//console.log(second); 
+//console.log(rest);  
 /*
 4. Конкатенация массивов
   - Создайте массив с числами [1,2,3,4,5]
@@ -67,6 +67,6 @@ const arr2 = [6, 7, 8, 9, 10];
 
 const mergedArray = [...arr1, ...arr2];
 
-console.log(mergedArray);
+//console.log(mergedArray);
 // Ожидаемый результат: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-//export { forOf, result, first, second, rest, mergedArray };
+export { forOf, result, first, second, rest, mergedArray };
