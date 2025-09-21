@@ -26,7 +26,6 @@ function countOccurrences(arr) {
 const numbers = [1, 2, 2, 3, 4, 4, 4, 5];
 const result = countOccurrences(numbers);
 
-// Выводим результат в консоль, чтобы убедиться, что он правильный
-console.log(result); // Ожидаем: { '1': 1, '2': 2, '3': 1, '4': 3, '5': 1 }
+// console.log(result); // Ожидаем: { '1': 1, '2': 2, '3': 1, '4': 3, '5': 1 }
 
-// export { countOccurrences };
+export { countOccurrences };

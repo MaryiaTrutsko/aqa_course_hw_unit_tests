@@ -10,7 +10,7 @@ let qa = {
   age: 25,
   salary: 1000,
   getInfo: function(greetingsWord) {
-    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}.`;
+    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}`;
   }
 };
 
@@ -49,12 +49,13 @@ let applyResult = qa.getInfo.apply(anotherQa, ["Hey"]);
 */
 
 function createCounter() {
-  let count = 0;
+   let count = 0;
   return function() {
-    count++;
+   count++;
     console.log(`Function was called ${count} times`);
-  };
-}
+ return count;
+ };
+  }
 
 const functionCallCounter = createCounter();
 
@@ -67,10 +68,11 @@ console.log('Результат apply:', applyResult);
 
 console.log('\n--- Проверка части 3 ---');
 console.log('Вызов счетчика:');
+/* functionCallCounter();
 functionCallCounter();
 functionCallCounter();
 functionCallCounter();
 functionCallCounter();
-functionCallCounter();
+*/
 
-// export { qa, bindResult, callResult, applyResult, functionCallCounter, anotherQa };
+export { qa, bindResult, callResult, applyResult, functionCallCounter, anotherQa };
