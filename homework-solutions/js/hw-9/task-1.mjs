@@ -18,7 +18,7 @@ let stringValues = Object.values(character).filter(value => typeof value === 'st
 
 // 3
 /* Do not touch this part */
-// const logSpy = jest.spyOn(console, 'log');
+const logSpy = jest.spyOn(console, 'log');
 // ---
 
 // Ваш код
@@ -33,4 +33,4 @@ for (let i = 0; i < keyValuePairs.length; i++) {
 let hasSalaryKey1stOption = 'salary' in character;
 let hasSalaryKey2ndOption = Object.hasOwn(character, 'salary');
 
-// export { keyWithFourChars, stringValues, hasSalaryKey1stOption, hasSalaryKey2ndOption, keyValuePairs, logSpy };
+export { keyWithFourChars, stringValues, hasSalaryKey1stOption, hasSalaryKey2ndOption, keyValuePairs, logSpy };

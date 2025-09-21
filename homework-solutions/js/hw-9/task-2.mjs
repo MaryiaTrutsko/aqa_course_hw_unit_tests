@@ -1,5 +1,5 @@
 /*
- 1. Напишите функцию addCharacter(character) позволяющую добавить новый объект в массив characters. 
+ 1. Напишите функцию addCharacter(character) позволяющую добавить новый объект в массив characters.
      Объект должен иметь поля name (string) и age (number)
  2. Напишите функцию getCharacter(name), позволяющую получить объект персонажа по его имени// getCharacter('Fred') => { 'name': 'Fred', 'age': 40 }
  3. Напишите функцию getCharactersByAge(minAge), возвращающую массив персонажей НЕ МЛАДШЕ minAge // getCharactersByAge(40) => [{ 'name': 'Fred', 'age': 40 },{ 'name': 'Jack', 'age': 50 }]
@@ -8,45 +8,62 @@
  */
 
 const characters = [
-    { name: 'Barney', age: 35 },
-    { name: 'Fred', age: 39 },
-    { name: 'Jack', age: 49 },
-  ];
+      { name: 'Barney', age: 35 },
+      { name: 'Fred', age: 39 },
+      { name: 'Jack', age: 49 },
+    ];
   
   function addCharacter(character) {
-    // Ваш код
-    characters.push(character);
+      // Проверка на корректность входных данных
+      if (!character || typeof character.name !== 'string' || typeof character.age !== 'number') {
+          throw new Error('Invalid input: character must have a name (string) and age (number).');
+      }
+      characters.push(character);
   }
-  
+    
   function getCharacter(name) {
-    // Ваш код
-    return characters.find(char => char.name === name);
+      // Проверка на корректность входных данных
+      if (typeof name !== 'string' || !name) {
+          throw new Error('Invalid input: name must be a non-empty string.');
+      }
+      return characters.find(char => char.name === name);
   }
   
   function getCharactersByAge(minAge) {
-    // Ваш код
-    return characters.filter(char => char.age >= minAge);
+      // Проверка на корректность входных данных
+      if (typeof minAge !== 'number' || minAge < 0) {
+          throw new Error('Invalid input: minAge must be a positive number.');
+      }
+      return characters.filter(char => char.age >= minAge);
   }
   
   function updateCharacter(name, newCharacter) {
-    // Ваш код
-    const existingCharacter = getCharacter(name);
-    if (existingCharacter) {
+      // Проверка на корректность входных данных
+      if (typeof name !== 'string' || !name || !newCharacter) {
+          throw new Error('Invalid input.');
+      }
+      const existingCharacter = getCharacter(name);
+      // Проверка, найден ли персонаж
+      if (!existingCharacter) {
+          throw new Error('Character not found.');
+      }
       Object.assign(existingCharacter, newCharacter);
-    }
   }
   
   function removeCharacter(name) {
-    // Ваш код
-    const index = characters.findIndex(char => char.name === name);
-    if (index !== -1) {
+      // Проверка на корректность входных данных
+      if (typeof name !== 'string' || !name) {
+          throw new Error('Invalid input: name must be a non-empty string.');
+      }
+      const index = characters.findIndex(char => char.name === name);
+      // Проверка, найден ли персонаж
+      if (index === -1) {
+          throw new Error('Character not found.');
+      }
       characters.splice(index, 1);
-    }
   }
+    
   
-  
-  // Ниже приведены вызовы функций для проверки их работы
-  // Для того чтобы увидеть результат, нужно запустить этот файл в Node.js
   console.log('Изначальный массив:', characters);
   
   // 1. Проверка addCharacter
@@ -65,4 +82,4 @@ const characters = [
   console.log('\n--- Фильтрация по возрасту ---');
   const olderCharacters = getCharactersByAge
   
-   // export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
+   export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
